@@ -1,0 +1,31 @@
+﻿@using AplicacaoCaixaEletronico.Models
+@model List<Cedulas>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Caixa Eletronico";
+}
+
+<div class="text-center">
+    <label style="text-align:center; color: black; font-size:x-large">Notas Disponiveis</label>
+</div>
+
+<br>
+
+<div class="row mx-md-n3">
+    @foreach (Cedulas item in Model)
+    {
+
+        @if (item.Qtd > 0)
+        {
+            <div class="col py-2 px-md-4">
+                <img src="~/Imagens/@(item.Nota).jpg" alt="Cedula" width="260" height="110" />
+            </div>
+        }
+    }
+</div>
+
+<div class="text-center">
+    <a href="/Saque/Create" class="btn btn-success">Realizar Saque</a>
+</div>
+

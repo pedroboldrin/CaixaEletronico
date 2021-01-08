@@ -1,0 +1,22 @@
+﻿@model AplicacaoCaixaEletronico.Models.Saque
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Novo Saque";
+    var mensagem = ViewBag.Mensagem;
+}
+
+@if (mensagem != null)
+{
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="text-center">
+        <label style="text-align:center; color: black; font-size:x-large">@mensagem</label>
+    </div>
+    <div class="align-content-between text-center">
+        <a href="/Saque/Create" class="btn btn-success">Realizar Saque</a>
+        <a href="/Saque/Index" class="btn btn-danger">Cancelar</a>
+    </div>
+}
